@@ -1,8 +1,11 @@
-//make a function for a blog page
+import ContactForm from "../ui/contact/contact";
+import { MyFooter } from "../ui/footer/footer";
+
 export default function ContactPage() {
   return (
-    <div>
-      <h1 className="text-4xl">Contact Page</h1>
+    <div className="">
+      <ContactForm />
+      <MyFooter />
     </div>
   );
 }

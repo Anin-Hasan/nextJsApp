@@ -1,13 +1,10 @@
 import React from "react";
+import { About } from "../ui/about/about";
 
 const AboutPage: React.FC = () => {
   return (
     <div>
-      <h1>About Us</h1>
-      <p>
-        Welcome to the About Page. Here you can learn more about our company and
-        team.
-      </p>
+      <About />
     </div>
   );
 };

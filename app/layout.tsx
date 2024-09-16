@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { NavBar } from "./ui/navbar";
 import { poppins } from "./ui/fonts";
+import { MyFooter } from "./ui/footer/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${poppins.className} antialiased bg-white`}>
+      <body className={` ${poppins.className} antialiased bg-white text-black`}>
         <NavBar />
         {children}
       </body>

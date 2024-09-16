@@ -1,3 +1,9 @@
+import { SpinLoading } from "./ui/spinner/spinner";
+
 export default function Loading() {
-  return <div>Loading ...</div>;
+  return (
+    <div>
+      <SpinLoading />;
+    </div>
+  );
 }
