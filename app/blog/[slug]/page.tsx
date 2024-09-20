@@ -1,8 +1,15 @@
-//write a function for this page
+"use client";
+import SingleBlogPage from "@/app/ui/singleBlogPage/SingleBlogPage";
+import { MyFooter } from "@/app/ui/footer/footer";
+import { useParams } from "next/navigation";
+
 export default function BlogPage() {
+  const { slug } = useParams();
+  const params = { slug };
   return (
     <div>
-      <h1>Blog Page</h1>
+      <SingleBlogPage params={params} />
+      <MyFooter />
     </div>
   );
 }

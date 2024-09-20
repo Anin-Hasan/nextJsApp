@@ -2,25 +2,38 @@ import { Footer } from "flowbite-react";
 
 export function MyFooter() {
   return (
-    <Footer container className="flex justify-between p-28">
-      <Footer.Copyright href="#" by="Anin™" year={2024} />
-      <Footer.LinkGroup className="flex gap-4">
-        <Footer.Link href="/about" className="hover:text-blue-700 duration-300">
-          About
-        </Footer.Link>
-        <Footer.Link href="#" className="hover:text-blue-700 duration-300">
-          Privacy Policy
-        </Footer.Link>
-        <Footer.Link href="#" className="hover:text-blue-700 duration-300">
-          Licensing
-        </Footer.Link>
-        <Footer.Link
-          href="/contact"
-          className="hover:text-blue-700 duration-300"
-        >
-          Contact
-        </Footer.Link>
-      </Footer.LinkGroup>
-    </Footer>
+    <footer className="bg-white mx-20 p-4 ">
+      <div className="w-full  p-4 md:flex md:items-center md:justify-between">
+        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-600">
+          © 2023{" "}
+          <a href="#" className="hover:underline">
+            Anin™
+          </a>
+          . All Rights Reserved.
+        </span>
+        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-600 dark:text-gray-600 sm:mt-0">
+          <li>
+            <a href="/about" className="hover:underline me-4 md:me-6">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#" className="hover:underline me-4 md:me-6">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="/blog" className="hover:underline me-4 md:me-6">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="/contact" className="hover:underline">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   );
 }

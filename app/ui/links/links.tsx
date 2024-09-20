@@ -14,6 +14,10 @@ const baseLinks = [
     url: "/about",
   },
   {
+    title: "Blog",
+    url: "/blog",
+  },
+  {
     title: "Contact",
     url: "/contact",
   },

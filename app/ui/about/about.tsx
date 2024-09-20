@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Footer } from "flowbite-react";
 import { MyFooter } from "../footer/footer";
 
 export function About() {
