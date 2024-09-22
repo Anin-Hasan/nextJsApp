@@ -1,18 +1,11 @@
 import PostCard from "../ui/postcard/postCard";
-
-const getData = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const data = res.json();
-  if (!res.ok) {
-    throw new Error("Data Fetching Problem  ");
-  }
-  return data;
-};
+import { getPosts } from "@/lib/data";
 
 const BlogPage = async () => {
-  const posts = await getData();
+  const posts = await getPosts();
+
   return (
-    <div className="flex flex-wrap justify-between m-20">
+    <div className="flex flex-wrap gap-4 m-20">
       {posts.map((post: any) => (
         <div key={post.id}>
           <PostCard post={post} />
