@@ -1,12 +1,7 @@
-import { signIn } from "@/lib/auth";
+import { handleGithubLogin } from "@/lib/action";
 
 //function for login page
-export default function LoginPage() {
-  const handleGithubLogin = async () => {
-    "use server";
-    await signIn("github");
-  };
-
+export default async function LoginPage() {
   return (
     <div>
       <form action={handleGithubLogin}>

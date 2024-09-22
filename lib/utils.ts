@@ -6,7 +6,6 @@ import mongoose from "mongoose";
 dotenv.config();
 
 const mongo = process.env.MONGO as string;
-console.log("env:", process.env.MONGO);
 
 const options = {
   autoIndex: false, // Don't build indexes

@@ -2,12 +2,19 @@ import React from "react";
 import Image from "next/image";
 import { getPost } from "@/lib/data";
 
+const getData = async (slug: string) => {
+  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  if (!res.ok) {
+    console.log("error at blog page and blog API endpoint.");
+  }
+  return res.json();
+};
+
 type Props = { params: any };
 
 const SingleBlogPage = async (props: Props) => {
   const { slug } = props.params;
-  const post = await getPost(slug);
-  console.log(post);
+  const post = await getData(slug);
 
   return (
     <>

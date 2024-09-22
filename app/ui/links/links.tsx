@@ -2,6 +2,7 @@
 import Link from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import { handleGithubLogout } from "@/lib/action";
 import { useState } from "react";
 
 const baseLinks = [
@@ -26,9 +27,12 @@ const baseLinks = [
     url: "/login",
   },
 ];
-export default function Links() {
+
+type session = { session: any };
+
+export default function Links(session: session) {
   const pathname = usePathname();
-  const isSession = false;
+  const [isLoggedIn, setIsLoggedIn] = useState(!!session.session?.user);
   const isAdmin = true;
 
   const links = [...baseLinks];
@@ -40,6 +44,10 @@ export default function Links() {
       url: "/admin",
     });
   }
+  const handleLogout = async () => {
+    await handleGithubLogout();
+    setIsLoggedIn(false);
+  };
   return (
     <>
       {links.map((link) => (
@@ -50,7 +58,11 @@ export default function Links() {
             "text-blue-600 text-base": pathname === link.url,
           })}
         >
-          {isSession && link.title === "login" ? "Logout" : link.title}
+          {isLoggedIn && link.title === "login" ? (
+            <button onClick={handleLogout}>Logout</button>
+          ) : (
+            link.title
+          )}
         </Link>
       ))}
     </>
