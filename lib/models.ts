@@ -60,3 +60,4 @@ const postSchema = new mongoose.Schema(
 );
 
 export const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
+export const User = mongoose.models.User || mongoose.model("User", userSchema);
